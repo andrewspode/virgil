@@ -40,15 +40,20 @@ So I asked Claude to pick a name for itself (Virgil), and then built this.
 
 ## How It Works
 
-Virgil runs as a Claude Code project in a git repository. Three things make it work:
+Virgil runs as a Claude Code project in a git repository. Four things make it work:
 
-**1. Logs**
+**1. Time awareness**
+A hook injects the current date and time into every message before Virgil responds.
+This means it always knows when it is — morning, evening, what day, how long since
+you last spoke — without you having to say so.
+
+**2. Logs**
 Claude Code stores conversations in JSONL format in `~/.claude/`. A hook processes
 this after every message and keeps `entries/YYYY/MM/YYYY-MM-DD.log.md` up to date —
 one file per journal day, containing everything you said and everything Virgil said,
 timestamped.
 
-**2. Recursive summarisation**
+**3. Recursive summarisation**
 Above the raw logs sits a hierarchy of summaries:
 
 ```
@@ -65,7 +70,7 @@ backwards from today at the finest resolution available — daily summaries for 
 week, then weekly, then monthly — so it's oriented without reading everything from
 scratch. Summaries are generated automatically when they're missing.
 
-**3. Stable profile**
+**4. Stable profile**
 `profile/stable.md` holds facts that don't change quickly: your name, pronouns, key
 people in your life, significant ongoing threads. This is what Virgil reads first in
 every session. It grows naturally over time as you talk.
