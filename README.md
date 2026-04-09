@@ -103,6 +103,22 @@ and an early-morning one on the same calendar day are treated as a single journa
 
 That's it. All paths are computed automatically. The timezone is read from your system.
 
+### Tips
+
+**Accessing from web or mobile:** Run `/remote-control` in Claude Code and you can
+access the session from the Claude web app or mobile app — making it feel like a
+normal conversation while still running the full Virgil system in the background.
+
+**When to clear context:** Clearing context causes Virgil to re-read all your
+summaries from scratch, which uses tokens. Doing it daily is wasteful; a weekly
+clear is a reasonable cadence — long enough for the context to feel fresh, without
+rebuilding orientation too often.
+
+**Avoid conversation compaction.** Claude Code's compaction feature summarises your
+context window when it gets large, but this interferes with how Virgil works — it
+relies on having its own structured summary hierarchy, not a compacted version of
+the conversation. If prompted to compact, decline and clear context instead.
+
 ---
 
 ## Importing an Existing Claude.ai Conversation
