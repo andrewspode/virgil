@@ -95,7 +95,8 @@ and an early-morning one on the same calendar day are treated as a single journa
 2. **Open the project in Claude Code.** Navigate to your journal directory and run
    `claude` (or open it from the Claude Code desktop app).
 
-3. **Follow the first-run conversation.** Virgil will introduce itself, explain how
+3. **Say hello.** Claude Code doesn't prompt you automatically, so just say something
+   — "Hello Virgil" works fine. On first run it will introduce itself, explain how
    the system works, ask for your name and pronouns, and offer to help with any
    initial setup — including importing an existing conversation and adjusting the
    journal day boundary if the default (05:00) doesn't suit you.
