@@ -1,0 +1,36 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)"
+    ]
+  },
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -c \"from datetime import datetime; import time; tz_name = datetime.now().astimezone().tzname(); print('Current date/time:', datetime.now().astimezone().strftime('%Y-%m-%d %H:%M'), tz_name)\""
+          },
+          {
+            "type": "command",
+            "command": "./scripts/summarise-hook.sh"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ./scripts/export-log.py 2>/dev/null || true"
+          }
+        ]
+      }
+    ]
+  }
+}
