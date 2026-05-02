@@ -12,7 +12,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python3 -c \"from datetime import datetime; import time; tz_name = datetime.now().astimezone().tzname(); print('Current date/time:', datetime.now().astimezone().strftime('%Y-%m-%d %H:%M'), tz_name)\""
+            "command": "python3 -c \"from datetime import datetime; import time; tz_name = datetime.now().astimezone().tzname(); print('Current date/time:', datetime.now().astimezone().strftime('%Y-%m-%d %H:%M'), tz_name + ',', datetime.now().astimezone().strftime('%A'))\""
           },
           {
             "type": "command",
